@@ -17,8 +17,9 @@
       <div class="mb-3 row">
         <label class="col-sm-3 col-form-label">Precio</label>
         <div class="col-sm-9 ">
-          <input ngModel name="precio" type="number" class="form-control" placeholder="Precio del producto" required>
-          <span class="form-text text-danger" *ngIf="validateProductPrice()">El precio debe tener un valor</span>
+          <input ngModel name="precio" type="number" class="form-control" placeholder="Precio del producto" min="0"
+            required>
+          <span class="form-text text-danger" *ngIf="validateProductPrice()">El precio debe ser 0 o mayor</span>
         </div>
       </div>
       <!-- EXISTENCIAS -->
@@ -26,12 +27,12 @@
         <label class="col-sm-3 col-form-label">Existencias</label>
         <div class="col-sm-9 ">
           <input ngModel name="existencias" type="number" class="form-control" placeholder="Existencias del producto"
-            required>
+            customMin [minimo]="0" required>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <button type="submit" class="btn btn-primary float-end">Guardar</button>
+          <button type="submit" class="btn btn-primary float-end" [disabled]="myForm.invalid">Guardar</button>
         </div>
       </div>
     </form>
