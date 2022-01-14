@@ -11,5 +11,16 @@ export class DinamicosComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  guardar = () => {
+    
+  }
+  
+  eliminar = (index: number) => {
+    
+  }
 
+  agregarJuego = () => {
+
+  }
 }
